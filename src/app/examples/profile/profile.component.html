@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/profil.jpg') ;">
+        </div>
+        <div class="container">
+            <div class="content-center" *ngFor="let item of (this.getUsersObservable | async); let i = index"> 
+                <h3 class="title">{{item.displayName}}</h3>
+                <p class="category">{{item.role}}</p>
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+          <h3 class="title">Ponude
+          </h3>
+
+          <div class="row">
+            <button [ngClass]="isDesktopDevice ? '': 'mx-auto text-center'" 
+            class="btn btn-info btn-round btn-lg" type="button" (click)="openDodajPonudu()">
+            Dodaj ponudu</button>
+        </div>
+
+        <div class="row">
+            <button [ngClass]="isDesktopDevice ? '': 'mx-auto text-center'" 
+            class="btn btn-danger btn-round btn-lg" type="button" (click)="openObrisiPonudu()">
+            Obriši ponudu</button>
+        </div>
+            <div class="row justify-content-center">
+
+              <button class="btn btn-info btn-round btn-lg" type="button" (click)="open('index')">Odjava</button>
+
+            </div>
+
+
+        </div>
+    </div>
+   
+</div>
