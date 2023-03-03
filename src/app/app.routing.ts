@@ -6,7 +6,7 @@ import { OffersComponent } from './components/offers/offers.component';
 import { ComponentsComponent } from './components/components.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
-
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -14,6 +14,7 @@ const routes: Routes =[
     { path: 'nucleoicons',          component: NucleoiconsComponent },
     { path: 'examples/landing',     component: LandingComponent },
     { path: 'offers',                component: OffersComponent },
+    { path: 'contact',                component: ContactComponent },
 ];
 
 @NgModule({
