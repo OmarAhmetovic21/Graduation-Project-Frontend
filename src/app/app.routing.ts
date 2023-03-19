@@ -4,17 +4,19 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { OffersComponent } from './components/offers/offers.component';
 import { ComponentsComponent } from './components/components.component';
-import { LandingComponent } from './examples/landing/landing.component';
-import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
-import { ContactComponent } from './contact/contact.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { LoginComponent } from './components/login/login.component';
+
 
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index',                component: ComponentsComponent },
-    { path: 'nucleoicons',          component: NucleoiconsComponent },
-    { path: 'examples/landing',     component: LandingComponent },
+    { path: 'about-us',                component: AboutUsComponent },
     { path: 'offers',                component: OffersComponent },
     { path: 'contact',                component: ContactComponent },
+    { path: 'login',                component: LoginComponent }
+    
 ];
 
 @NgModule({

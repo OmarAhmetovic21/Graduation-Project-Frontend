@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -18,7 +17,7 @@ import { ContactComponent } from './contact/contact.component';
         AppComponent,
         NavbarComponent,
         FooterComponent,
-        ContactComponent
+        
 
     ],
     imports: [
