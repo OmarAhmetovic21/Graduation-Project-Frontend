@@ -10,6 +10,7 @@ import { OffersComponent } from './offers/offers.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { LoginComponent } from './login/login.component';
         AboutUsComponent,
         OffersComponent,
         ContactComponent,
-        LoginComponent
+        LoginComponent,
+        AdminPageComponent
     ],
     exports:[ ComponentsComponent ]
 })
