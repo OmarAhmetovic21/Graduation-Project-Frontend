@@ -45,13 +45,13 @@ export class AppComponent implements OnInit {
         this.router.events
         .filter(event => event instanceof NavigationStart)
         .subscribe((event:NavigationStart) => {
-            if(event?.url ==='/login' || event?.url ==='/profile') {
+            if(event?.url ==='/login' || event?.url ==='/admin-page') {
                 this.displayFooter = false;
              } else {
                  this.displayFooter = true;
              }
 
-             if(event?.url ==='/profile'){
+             if(event?.url ==='/admin-page'){
                  this.displayNavbar = false;
              }
              else{

@@ -1,1 +1,49 @@
-<p>admin-page works!</p>
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/profil.jpg') ;">
+        </div>
+        <div class="container">
+            
+            <div class="content-center mt-5"> 
+                <h5 class="title">Car Maintenance Shop <br> "Omar and Merjem"</h5>
+                <p class="category mt-5">Admin</p>
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container ">
+          <h3 class="title" style="text-align: center;">Articles
+          </h3>
+
+          <div class="row">
+            <button class="btn btn-info btn-round btn-lg mx-auto text-center" type="button">
+            Add an Article</button>
+        </div>
+
+
+        <div class="row mt-5">
+            <h4 [ngClass]="isDesktopDevice ? 'col-1': 'col-12 mx-auto text-center'">Test</h4>
+            <img [ngClass]="isDesktopDevice ? 'col-4': 'col-12 mx-auto text-center'" src="assets/img/Pozadina.jpg"> 
+            <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">200 KM</h4>
+            <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">Quantity: 4</h4>
+            <i class="fas fa-edit col-1"></i>
+            <i class="fas fa-eraser col-1"></i>
+
+            
+        </div>
+        
+        <div class="row justify-content-center mt-5">
+
+            <button class="btn btn-info btn-round btn-lg" (click)="open('index')" type="button">Logout</button>
+
+        </div>
+
+
+        </div>
+    </div>
+   
+</div>
+
+
