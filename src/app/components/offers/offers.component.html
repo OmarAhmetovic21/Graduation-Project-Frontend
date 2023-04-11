@@ -11,11 +11,11 @@
                 <h2 class="title" [ngClass]="isDesktopDevice ? 'col-12': 'col-12 mx-auto text-center'">Offers</h2>
             </div>
 
-            <div class="row mt-5">
-                <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">Test</h4>
-                <img [ngClass]="isDesktopDevice ? 'col-4': 'col-8 mx-auto text-center'" src="assets/img/Pozadina.jpg"> 
-                <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">200 KM</h4>
-                <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">Quantity: 4</h4>
+            <div class="row mt-5" *ngFor="let item of (this.getOffersObservable | async); let i = index">
+                <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">{{item.name}}</h4>
+                <h4 [ngClass]="isDesktopDevice ? 'col-4': 'col-8 mx-auto text-center'">{{item.media}}</h4>
+                <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">{{item.price}} KM</h4>
+                <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">Quantity: {{item.amount}}</h4>
             </div>
             
         </div>
