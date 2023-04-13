@@ -11,6 +11,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AddOfferComponent } from './add-offer/add-offer.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
         OffersComponent,
         ContactComponent,
         LoginComponent,
-        AdminPageComponent
+        AdminPageComponent,
+        AddOfferComponent
     ],
     exports:[ ComponentsComponent ]
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
-import { OffersServiceService } from 'app/services/offers-service/offers-service.service';
+import { OffersServiceService } from 'app/services/offers-service/offers.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs';
 
