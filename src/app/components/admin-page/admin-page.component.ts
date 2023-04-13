@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { OffersServiceService } from 'app/services/offers-service/offers.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject } from 'rxjs';
+import { AddOfferComponent } from '../add-offer/add-offer.component';
 
 @Component({
   selector: 'app-admin-page',
@@ -17,6 +19,7 @@ export class AdminPageComponent implements OnInit {
   constructor(private router: Router,
               private deviceService: DeviceDetectorService,
               private offersService: OffersServiceService,
+              private modalService: NgbModal,
               private sanitizer: DomSanitizer) {
                 this.getOffersObservable = new BehaviorSubject<any[]>([]);
                }
@@ -40,6 +43,14 @@ export class AdminPageComponent implements OnInit {
       console.log(data);
     })
   }
+
+  openAddOffer(){
+    const modalRef = this.modalService.open(AddOfferComponent,
+      {
+        scrollable: true,
+        windowClass: 'myCustomModalClass',
+      });
+    }
 
   
 
