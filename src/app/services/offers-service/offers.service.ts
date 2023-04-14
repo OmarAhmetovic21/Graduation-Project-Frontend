@@ -18,4 +18,10 @@ export class OffersServiceService {
     headers.set('Content-Type', 'application/json; charset=utf-8');  
     return this.httpClient.get(this.API_SERVER + 'config/getOffers.php',{headers: headers});
   }
+
+  public postOffers(data: any): Observable<any>{
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json; charset=utf-8');  
+    return this.httpClient.post(this.API_SERVER + 'config/postOffers.php', data, {headers: headers});
+  }
 }
