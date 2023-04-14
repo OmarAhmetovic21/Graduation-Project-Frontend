@@ -5,7 +5,7 @@ import { OffersServiceService } from 'app/services/offers-service/offers.service
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject } from 'rxjs';
-import { AddOfferComponent } from '../add-offer/add-offer.component';
+import {AddOfferComponent} from '../add-offer/add-offer.component';
 
 @Component({
   selector: 'app-admin-page',

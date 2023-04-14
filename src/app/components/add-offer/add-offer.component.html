@@ -1,5 +1,5 @@
 <div class="modal-header" style="background-color: #2ca8ff">
-    <h1 class="modal-title" style="color: #000000;; text-align: center;">Add an Offer</h1>
+    <h1 class="modal-title" style="color: #000000;; text-align: center;">Dodaj Ponudu</h1>
     <button style="background-color: #2ca8ff" type="button" class="close" data-dismiss="modal" (click)="activeModal.close()">
       <span style="color: #000000;" aria-hidden="true">&times;</span>
     </button>
@@ -24,24 +24,26 @@
 
             <div class="col-12 mb-2" style="width: 100%; height:100%">
                 <h5>
-                    Quantity 
+                    Amount
                 </h5>
                 <input type="number" style="width: 100%; height:100%; background-color: #b8b5b5;;" maxlength="255" class="form-control" [(ngModel)]="amount"/>
                 
             </div>
 
             <div class="col-12 mt-4">
-                <h5>Add an image 
+                <h5>Add an Image
                 </h5>
-                <input type="text" style="width: 100%; height:100%; background-color: #b8b5b5;" maxlength="255" class="form-control" [(ngModel)]="media"/>
+                <input id="media" type="file" style="width: 100%; height:100%; background-color: #b8b5b5;" 
+                class="form-control" (change)="onChange($event)" [(ngModel)]="media"/>
             </div>
 
         </div>
 
         <div class="modal-footer mt-5">
             <button style="width:100% ;" (click)="postOffers()" type="button" 
-            class="btn btn-info btn-round mx-auto"><h5 class="mb-0">Save</h5></button>
+            class="btn btn-info btn-round mx-auto"><h5 class="mb-0">Sačuvaj</h5></button>
           </div>
         
           
     </div>
+  
