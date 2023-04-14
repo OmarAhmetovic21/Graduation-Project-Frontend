@@ -24,4 +24,10 @@ export class OffersServiceService {
     headers.set('Content-Type', 'application/json; charset=utf-8');  
     return this.httpClient.post(this.API_SERVER + 'config/postOffers.php', data, {headers: headers});
   }
+
+  public deleteOffers(id: any) : Observable<any>{
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json; charset=utf-8');  
+    return this.httpClient.delete(this.API_SERVER + '/config/deleteOffers.php' +id,{headers: headers});
+  }
 }

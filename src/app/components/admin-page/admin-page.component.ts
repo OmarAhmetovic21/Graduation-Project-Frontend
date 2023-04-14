@@ -44,6 +44,22 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
+  deleteOffers(id: any) {
+    this.delete(id);
+    this.offersService.deleteOffers(id).subscribe((data: any) => {
+      this.getOffers();
+    });
+
+  }
+
+  delete(id:number){
+    console.log(id);
+  }
+  
+  edit(item: any){
+    console.log(item);
+  }  
+
   openAddOffer(){
     const modalRef = this.modalService.open(AddOfferComponent,
       {
