@@ -75,7 +75,7 @@ export class AddOfferComponent implements OnInit {
       media: this.image
     }
     this.offersService.postOffers(data).subscribe((data: any)=> {
-      console.log("Uspješno ste dodali ponudu");
+      console.log("Successfully added offer");
     } );
     this.activeModal.close();
   }
