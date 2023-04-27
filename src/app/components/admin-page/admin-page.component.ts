@@ -68,6 +68,9 @@ export class AdminPageComponent implements OnInit {
       });
     }
 
-  
+    logout(){
+      sessionStorage.clear();
+        this.router.navigateByUrl('/index');
+    }
 
 }
