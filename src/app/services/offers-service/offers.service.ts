@@ -33,4 +33,11 @@ export class OffersServiceService {
         id:id
       }});
   }
+
+  public editOffer(data:any, id:any): Observable<any>{
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json; charset=utf-8');  
+    return this.httpClient.put(this.API_SERVER + '/config/updateOffers.php'+id, data, {headers: headers});
+
+  }
 }
