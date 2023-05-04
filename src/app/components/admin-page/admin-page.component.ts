@@ -14,6 +14,7 @@ import {AddOfferComponent} from '../add-offer/add-offer.component';
 })
 export class AdminPageComponent implements OnInit {
   isDesktopDevice: any;
+  objectData: any;
   getOffersObservable: BehaviorSubject<any[]>;
 
   constructor(private router: Router,
@@ -58,14 +59,20 @@ export class AdminPageComponent implements OnInit {
   
   edit(item: any){
     console.log(item);
-  }  
+    this.objectData=item;
+  }
 
-  openAddOffer(){
+
+
+  openAddOffer(data: any){
+    data=this.objectData;
+    this.edit(data);
     const modalRef = this.modalService.open(AddOfferComponent,
       {
         scrollable: true,
         windowClass: 'myCustomModalClass',
       });
+      
     }
 
     logout(){
