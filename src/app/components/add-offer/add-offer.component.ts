@@ -12,7 +12,7 @@ import { OffersServiceService } from 'app/services/offers-service/offers.service
 export class AddOfferComponent implements OnInit {
   image!: Observable<any>
   base64code!: any
-  
+  @Input() data: any;
   @Input()
   name: any;
   price: any;
@@ -23,6 +23,14 @@ export class AddOfferComponent implements OnInit {
               private offersService: OffersServiceService) { }
 
   ngOnInit(): void {
+    if(this.data){
+      this.name = this.data.name;
+      this.price = this.data.price;
+      this.amount = this.data.amount;
+      this.media = this.data.media;
+      
+      
+    }
 
   }
 
