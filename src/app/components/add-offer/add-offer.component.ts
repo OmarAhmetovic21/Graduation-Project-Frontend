@@ -10,15 +10,13 @@ import { OffersServiceService } from 'app/services/offers-service/offers.service
   styleUrls: ['./add-offer.component.css']
 })
 export class AddOfferComponent implements OnInit {
-  image!: Observable<any>
-  base64code!: any
-
 
   @Input() data: any;
   name: any;
   price: any;
   amount: any;
   media: any;
+  id: any;
 
   constructor(public activeModal: NgbActiveModal,
               private offersService: OffersServiceService) { }
@@ -29,6 +27,7 @@ export class AddOfferComponent implements OnInit {
       this.price= this.data.price;
       this.amount= this.data.amount;
       this.media= this.data.media;
+      this.id= this.data.id;
     }
 
   }
@@ -48,8 +47,7 @@ export class AddOfferComponent implements OnInit {
     })
     observable.subscribe((d)=>{
       console.log(d)
-      this.image = d;
-      this.base64code = d;
+      this.media = d;
 
     }
     )
@@ -79,12 +77,27 @@ export class AddOfferComponent implements OnInit {
       name: this.name,
       price: this.price,
       amount: this.amount,
-      media: this.image
+      media: this.media
     }
     this.offersService.postOffers(data).subscribe((data: any)=> {
       console.log("Successfully added offer");
     } );
+
     this.activeModal.close();
+  }
+
+  editOffer(){
+    let post = {
+      name: this.name,
+      price: this.price,
+      amount: this.amount,
+      media: this.media,
+      id: this.data.id
+    }
+  
+
+    this.activeModal.close(post);
+
   }
 
 

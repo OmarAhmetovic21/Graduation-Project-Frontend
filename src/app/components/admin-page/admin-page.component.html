@@ -28,8 +28,8 @@
             <img [ngClass]="isDesktopDevice ? 'col-4': 'col-12 mx-auto text-center'" src="{{item.media}}"> 
             <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">{{item.price}} KM</h4>
             <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">Quantity: {{item.amount}}</h4>
-            <i class="fas fa-edit" (click)="edit(item)" (click)="openAddOffer(item)" [ngClass]="isDesktopDevice ? 'col-1': 'col-12 mt-3 mx-auto text-center'"></i>
-            <i class="fas fa-eraser" (click)="delete(item.id)" (click)="deleteOffers(item.id)"  [ngClass]="isDesktopDevice ? 'col-1': 'col-12 mt-5 mx-auto text-center'"></i>
+            <i class="fas fa-edit" (click)="openAddOffer(item)" [ngClass]="isDesktopDevice ? 'col-1': 'col-12 mt-3 mx-auto text-center'"></i>
+            <i class="fas fa-eraser" (click)="deleteOffers(item.id)"  [ngClass]="isDesktopDevice ? 'col-1': 'col-12 mt-5 mx-auto text-center'"></i>
 
             
         </div>

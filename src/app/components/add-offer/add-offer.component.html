@@ -11,7 +11,10 @@
                 <h5>
                     Name
                 </h5>
-                <input type="text" style="width: 100%; height:100%; background-color: #b8b5b5;;" maxlength="255" class="form-control" [(ngModel)]="name"/>
+                <input type="text" 
+                style="width: 100%; height:100%; background-color: #b8b5b5;;" 
+                maxlength="255" class="form-control"
+                 [(ngModel)]="name"/>
                 
             </div>
 
@@ -19,7 +22,9 @@
                 <h5>
                     Price in KM
                 </h5>
-                <input type="text" style="width: 100%; height:100%; background-color: #b8b5b5;" maxlength="255" class="form-control" [(ngModel)]="price"/>
+                <input type="text" style="width: 100%; height:100%; background-color: #b8b5b5;"
+                 maxlength="255" class="form-control" 
+                 [(ngModel)]="price"/>
                 
             </div>
 
@@ -27,7 +32,9 @@
                 <h5>
                     Amount
                 </h5>
-                <input type="number" style="width: 100%; height:100%; background-color: #b8b5b5;;" maxlength="255" class="form-control" [(ngModel)]="amount"/>
+                <input type="number" style="width: 100%; height:100%; background-color: #b8b5b5;;" 
+                maxlength="255" class="form-control" 
+                [(ngModel)]="amount"/>
                 
             </div>
 
@@ -37,21 +44,25 @@
                 <h5 *ngIf="data">Edit Image
                 </h5>
                 
-                <input *ngIf="!data" id="media" type="file" style="width: 100%; height:100%; background-color: #b8b5b5;" 
-                class="form-control" (change)="onChange($event)" [(ngModel)]="media"/>
-                <h4 *ngIf="data" style="color: red; background-color: white;">
-                    <i  class="now-ui-icons ui-1_simple-remove float-right" role="button" ></i>
+                <input *ngIf="media==null" id="media" type="file" style="width: 100%; height:100%; background-color: #b8b5b5;" 
+                class="form-control" (change)="onChange($event)" [ngModel]="media"/>
+
+                <h4 (click)="media=null" *ngIf="media!=null" style="color: red; background-color: white;">
+                    <i class="now-ui-icons ui-1_simple-remove float-right" role="button" ></i>
                 </h4>
                 
-                <img *ngIf="data" [src]="media" alt="">
+                <img [src]="media" alt="">
                 
             </div>
 
         </div>
 
         <div class="modal-footer mt-5">
-            <button style="width:100% ;" (click)="postOffers()" type="button" 
+            <button *ngIf="!data" style="width:100% ;" (click)="postOffers()" type="button" 
             class="btn btn-info btn-round mx-auto"><h5 class="mb-0">Save</h5></button>
+
+            <button *ngIf="data" style="width:100% ;" (click)="editOffer()" type="button" 
+            class="btn btn-info btn-round mx-auto"><h5 class="mb-0">Update</h5></button>
           </div>
         
           
