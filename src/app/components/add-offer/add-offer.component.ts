@@ -79,11 +79,9 @@ export class AddOfferComponent implements OnInit {
       amount: this.amount,
       media: this.media
     }
-    this.offersService.postOffers(data).subscribe((data: any)=> {
-      console.log("Successfully added offer");
-    } );
+    
 
-    this.activeModal.close();
+    this.activeModal.close(data);
   }
 
   editOffer(){
@@ -93,8 +91,7 @@ export class AddOfferComponent implements OnInit {
       amount: this.amount,
       media: this.media,
       id: this.data.id
-    }
-  
+    }  
 
     this.activeModal.close(post);
 

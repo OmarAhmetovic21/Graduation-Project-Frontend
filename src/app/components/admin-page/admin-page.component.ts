@@ -57,10 +57,10 @@ export class AdminPageComponent implements OnInit {
   }
 
 
-  openAddOffer(data: any){
+  openAddEditOffer(data: any){
 
    this.modalService.openAddOffer(data).then((data) => {
-    if(data) {
+    if(data.id) {
       let post = {
         name: data.name,
         price: data.price,
@@ -72,6 +72,11 @@ export class AdminPageComponent implements OnInit {
         this.getOffers();
       } );
      
+    } else {
+      this.offersService.postOffers(data).subscribe((data: any)=> {
+        console.log("Successfully added offer");
+        this.getOffers();
+      } );
     }
     
   })
