@@ -13,6 +13,11 @@ export class AddOfferComponent implements OnInit {
   image!: Observable<any>
   base64code!: any
   @Input() data: any;
+  articleName: any;
+  articlePrice: any;
+  articleAmount: any;
+  articleMedia: any;
+
   @Input()
   name: any;
   price: any;
@@ -24,12 +29,10 @@ export class AddOfferComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.data){
-      this.name = this.data.name;
-      this.price = this.data.price;
-      this.amount = this.data.amount;
-      this.media = this.data.media;
-      
-      
+      this.articleName = this.data.articleName;
+      this.articlePrice= this.data.articlePrice;
+      this.articleAmount= this.data.articleAmount;
+      this.articleMedia= this.data.articleMedia;
     }
 
   }

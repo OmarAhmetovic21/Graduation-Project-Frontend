@@ -56,16 +56,12 @@ export class AdminPageComponent implements OnInit {
   delete(id:number){
     console.log(id);
   }
-  
+
   edit(item: any){
     console.log(item);
-    this.objectData=item;
   }
 
-
-
   openAddOffer(data: any){
-    data=this.objectData;
     this.edit(data);
     const modalRef = this.modalService.open(AddOfferComponent,
       {
@@ -74,7 +70,7 @@ export class AdminPageComponent implements OnInit {
       });
       
     }
-
+  
     logout(){
       sessionStorage.clear();
         this.router.navigateByUrl('/index');
