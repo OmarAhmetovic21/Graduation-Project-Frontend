@@ -6,10 +6,15 @@ import { Observable } from 'rxjs';
 export class TokenInterceptor implements HttpInterceptor {
   constructor() {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    console.log(request.url)
-    
-    
+    let token = sessionStorage.getItem("jwt");
+    if(request.url.indexOf("getOffers.php") === -1 && request.url.indexOf("login.php") === -1){
+    request = request.clone({
+      setHeaders: {
+        Authorization: `${token}`
+      }
+    });
+  }
     return next.handle(request);
   }
 }
+

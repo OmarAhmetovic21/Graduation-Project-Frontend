@@ -6,11 +6,11 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
     declarations: [
@@ -30,7 +30,9 @@ import { FooterComponent } from './shared/footer/footer.component';
         ComponentsModule,
         ExamplesModule
     ],
-    providers: [],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
