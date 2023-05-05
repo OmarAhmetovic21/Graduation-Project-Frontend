@@ -24,7 +24,7 @@
 
 
         <div class="row mt-5" *ngFor="let item of (this.getOffersObservable | async); let i = index">
-            <h4 [ngClass]="isDesktopDevice ? 'col-1': 'col-12 mx-auto text-center'">{{item.name}}</h4>
+            <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">{{item.name}}</h4>
             <img [ngClass]="isDesktopDevice ? 'col-4': 'col-12 mx-auto text-center'" src="{{item.media}}"> 
             <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">{{item.price}} KM</h4>
             <h4 [ngClass]="isDesktopDevice ? 'col-2': 'col-12 mx-auto text-center'">Quantity: {{item.amount}}</h4>

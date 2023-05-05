@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { OffersServiceService } from 'app/services/offers-service/offers.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject } from 'rxjs';
 import {AddOfferComponent} from '../add-offer/add-offer.component';
+import { ModalService } from 'app/services/modal-service/modal.service';
 
 @Component({
   selector: 'app-admin-page',
@@ -20,7 +20,7 @@ export class AdminPageComponent implements OnInit {
   constructor(private router: Router,
               private deviceService: DeviceDetectorService,
               private offersService: OffersServiceService,
-              private modalService: NgbModal,
+              private modalService: ModalService,
               private sanitizer: DomSanitizer) {
                 this.getOffersObservable = new BehaviorSubject<any[]>([]);
                }
@@ -63,11 +63,18 @@ export class AdminPageComponent implements OnInit {
 
   openAddOffer(data: any){
     this.edit(data);
-    const modalRef = this.modalService.open(AddOfferComponent,
-      {
-        scrollable: true,
-        windowClass: 'myCustomModalClass',
+   this.modalService.openAddOffer(data).then((data) => {
+    if(data) {
+      // PUT PREMA BE
+      /*this.contentService.editContent(data, contentData.id).subscribe(() => {
+        this.getContent();
+        this.isEdit = false;
       });
+      */
+    }
+  })
+  .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+
       
     }
   
