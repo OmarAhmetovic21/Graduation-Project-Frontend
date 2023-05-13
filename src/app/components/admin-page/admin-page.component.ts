@@ -46,7 +46,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   deleteOffers(id: any) {
-    if(confirm("Are you sure to delete ")) {
+    if(confirm("Are you sure you want to delete this offer")) {
       console.log("Implement delete functionality here");
       this.offersService.deleteOffers(id).subscribe((data: any) => {
         this.getOffers();
